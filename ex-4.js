@@ -375,11 +375,12 @@ const bills = [
 
 // Start coding here
 function memberCount(bill) {
-  const uniqueNames = [...new Set(
-    bill
-      .filter((item) => item.member !== null)
-      .map((item) => item.member.name)
-  )];
+  const uniqueNames = bill.filter((item) => item.member !== null).map((item) => item.member.name).reduce((acc,cur)=>{
+    if (!acc.includes(cur)) {
+      acc.push(cur);
+    }
+    return acc;
+  },[]);
   return `Unique Members Count: ${uniqueNames.length}`;
 }
 

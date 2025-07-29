@@ -392,6 +392,16 @@ function totalByLocation(bill) {
       return acc;
     }, {});
     return result;
+
+    // let result = bill.reduce((acc, cur) => {
+    //     if (acc[cur.location]) {
+    //       acc[cur.location] += cur.total;
+    //     } else {
+    //       acc[cur.location] = cur.total;
+    //     }
+    //     return acc;
+    //   }, {});
+    //   return result;
   }
 
 const totalPaidByLocation = totalByLocation(bills);
